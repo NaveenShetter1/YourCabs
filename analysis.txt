@@ -1,0 +1,16 @@
+Analysing the cab data 	
+
+1) what columns to keep and what columns to drop
+2) Any data transformation needed
+
+1) Id column = drop because it is a unique and not a contributor, as nothing is repeating no pattern here 
+2) user_id = PII(personal information identifier, mobile num, aadhar, pan etc.. no use in ML models as we are not blocking anyone) =Drop
+3) vehicle_model_id = it is numerical column and 12 id is occurring more than 70% time here means 12 is occurring 31859 out of 43431
+based on this model_id we can make a new column as is_model_12
+--as vehicle id is occurring >70% hence it will surely create bias as it only learns about model 12.. so it is better to drop the column and create model_is_12 new column
+
+
+
+4)travel_type_id= keep
+
+5)package id is only for where travel_type_id 3f
